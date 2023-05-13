@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Language Learning with Movies</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5960e87e-775b-4e2c-87b2-0e5e6ef57205" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🍿</span></div><h1 class="page-title">Language Learning with Movies</h1></header><div class="page-body"><p id="ddba3dfa-d58d-4b52-92e4-13a49791891a" class=""><mark class="highlight-yellow">Author: Surafel Aramde 🤝 ChatGPT
+Published date: May 15, 2023</mark></p><p id="f8a4c444-a4be-4ea2-951c-7b37bad375f8" class="">
+</p><p id="eac0d930-acfa-497d-b8f4-089d917670fa" class="">Learning a new language can seem like a daunting task, especially if you don&#x27;t have access to proper guidance such as a language school or language learning books. Without a structured approach, it can be challenging to know where to start, what resources to use, and how to stay motivated throughout the process. But aren&#x27;t there fun and effective ways to immerse oneself in a language and pick up new vocabulary and grammar, even without access to proper guidance such as a language school or language learning books?</p><p id="38493a91-9dd6-4f91-a27a-aad65b4c83cf" class="">Movies seemed like an excellent resource for learning a new language, which is why I decided to give it a try. I discovered that movies are a fun and effective way to learn German, so I made them my main resource for language learning. Not only are they a great way to learn the language, but they also make the learning process enjoyable. By watching German movies with subtitles and taking notes on new words and phrases, I&#x27;ve been able to improve my language skills significantly. Additionally, I&#x27;ve found that movies provide a great way to practice listening and comprehension skills, which are essential for language learning.</p><p id="fb714407-3811-4291-9fd8-84672beb655e" class="">Overall, using movies as a language learning resource has been a fantastic experience for me. Not only have I improved my language skills, but I have also gained a deeper understanding of German culture and history. It has allowed me to learn in a fun and engaging way, and I would highly recommend it to anyone looking to improve their language skills. With this approach, you can start to immerse yourself in the language, pick up new vocabulary and grammar, and stay motivated throughout the learning process. 
+
+In this post, I would like to share with you some of my favorite German movies that have helped me in my language learning journey. Rather than providing a detailed review of each movie, I will give you a brief description about the movie and what I liked about them, without giving away too much information that might spoil the experience for you. I hope these recommendations will inspire you to explore German cinema and discover some great movies of your own.</p><h3 id="a9b589f6-fa89-4303-8a76-378f93b198be" class="">
+
+1. Lola rennt 4/5
+
+</h3><figure id="b366f3c9-0285-4602-a307-12d0053e7553" class="image"><a href="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled.webp"><img style="width:1240px" src="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled.webp"/></a></figure><p id="f7e7ecf4-adbf-411a-8658-b94399175b0b" class="">
+</p><p id="45522ff9-1d56-473d-80fd-dc8211973660" class="">&quot;Run Lola Run&quot; is an awesome German flick that packs in just the right amounts of thriller, suspense, and action. The story follows Lola, a badass chick who&#x27;s on a mission to save her boyfriend&#x27;s life. And she&#x27;s got just 20 minutes to gather 100,000 Deutsche Marks to do it! The movie&#x27;s got it all - heart-pumping chase scenes, slick editing, and a killer electronic soundtrack that&#x27;ll have you grooving in your seat. And the best part? It&#x27;s only an hour long, so even if you&#x27;re a beginner, you won&#x27;t feel bogged down by tricky dialogue or complex plot twists. Overall, &quot;Run Lola Run&quot; is one of the coolest German films out there, and a must-watch for anyone who loves a good adrenaline rush.</p><p id="3a541d00-62ad-470f-8237-c4cc08805ceb" class="">
+</p><h3 id="73ddbc88-f4b7-4f2d-876d-d9ceda164129" class="">2. Victoria 4.5/5</h3><p id="d5ba0d08-107f-4b21-bb31-349d52318b95" class="">
+</p><figure id="a117d263-6277-4dd0-a3a3-7375d9869151" class="image"><a href="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%201.webp"><img style="width:1440px" src="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%201.webp"/></a></figure><p id="17af717c-e658-4863-bdfa-204e602a8712" class="">
+</p><p id="cbf73f4a-16a0-4d46-b382-9401d7ea54c7" class="">“Victoria&quot; is an incredible German film that blew me away. One of the things that makes it so special is that it was shot in one continuous take - that&#x27;s right, the entire movie is just one long, unbroken shot! And let me tell you, the camerawork is absolutely mind-blowing. The camera follows the characters through the streets of Berlin, capturing every twist and turn of their wild night. It&#x27;s honestly one of the most impressive feats of filmmaking I&#x27;ve ever seen. Plus, a good portion of the dialogue is in English, which is a great bonus for language learners. But the movie isn&#x27;t just a technical marvel - the story is also incredibly compelling, with plenty of twists and turns to keep you on the edge of your seat. All in all, &quot;Victoria&quot; is an absolute masterpiece, and I would highly recommend it to anyone who&#x27;s looking for an unforgettable cinematic experience.</p><p id="e9ce55b9-64c5-44d4-9250-4f59e389ab29" class="">
+</p><h3 id="16e16d6c-8414-4e7c-b480-1b655d007925" class="">3. Angst essen Seele auf 4/5
+</h3><p id="dfa03dd3-3865-4f50-9533-7b4e665b1f37" class="">
+</p><figure id="8788b9dd-015a-4f0a-92af-b7fa13d6833f" class="image"><a href="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled.jpeg"><img style="width:680px" src="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled.jpeg"/></a></figure><p id="056a0221-1f7a-4b78-bb56-ecb8d983bc6a" class="">
+</p><p id="b539e776-aac8-4830-ba92-d963829c83e4" class="">&quot;Ali: Fear Eats the Soul&quot; is a classic German film that really stands the test of time. It&#x27;s an absolute gem that&#x27;s definitely worth checking out. The movie&#x27;s message is powerful and transcendent, even if the acting from the lead actor can be a bit questionable at times. But despite this, the film still manages to be incredibly moving and thought-provoking. It explores themes of love, racism, and xenophobia in post-World War II Germany, and does so with a deftness and sensitivity that&#x27;s truly impressive. Overall, I think &quot;Ali: Fear Eats the Soul&quot; is a must-watch for anyone who&#x27;s interested in German cinema or just looking for a powerful and timeless story.</p><h3 id="a8a93f17-bbea-4a49-a764-88ae50b48c65" class="">
+
+4. Coffee in Berlin 3.5/5
+</h3><figure id="fbfce054-b40d-4bae-830a-83f43544db77" class="image"><a href="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%201.jpeg"><img style="width:520px" src="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%201.jpeg"/></a></figure><p id="9af2299c-ee6d-4cc9-9911-908b3485a35b" class="">
+</p><p id="a885b35f-1900-4402-9555-cba34798cd9e" class="">&quot;Coffee in Berlin&quot; is a German movie that&#x27;s definitely worth a watch, but it&#x27;s not for everyone. If you&#x27;re not a fan of slow-paced films, this one might not be your cup of tea. That being said, I actually think the slow pacing makes it a great choice for language learners. The movie relies heavily on dialogue and character development, which can be really helpful for improving your German language skills. And even though the movie takes its time to unfold, the story and characters are still engaging enough to hold your attention. The film follows a young man named Niko as he wanders through the streets of Berlin trying to figure out his place in the world. It&#x27;s a thoughtful and introspective movie that&#x27;s sure to leave you with plenty to think about.</p><h3 id="62e10c6f-97b9-4116-9527-0c8c05e806a3" class="">
+5. Absolute Giganten 4/5
+
+</h3><figure id="f06fb7b6-e287-42a1-9b22-d5e96d7f9796" class="image"><a href="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%202.jpeg"><img style="width:1000px" src="Language%20Learning%20with%20Movies%205960e87e775b4e2c87b20e5e6ef57205/Untitled%202.jpeg"/></a></figure><p id="cba0a05e-7540-4470-9a75-7c5d79d9b4f6" class="">
+</p><p id="7b1d6ff4-eeef-4df6-a1f5-aad220580977" class="">&quot;Absolute Giganten&quot; is a coming-of-age film that&#x27;s packed with heart and humor, making it a must-watch. The story revolves around three young men from Hamburg as they near the end of high school and face the prospect of going in different directions in life. As someone in the same age group, I can vouch for the fact that this movie is well worth your time. What I loved most about &quot;Absolute Giganten&quot; was its ability to capture the essence of youth, with all its energy, passion, and uncertainty. Watching the characters navigate through this pivotal period in their lives was both entertaining and thought-provoking, leaving me with a lot to reflect on afterwards. What I loved most about &quot;Absolute Giganten&quot; was its ability to capture the essence of youth, with all its energy, passion, and uncertainty. Watching the characters navigate through this pivotal period in their lives was both entertaining and thought-provoking, leaving me with a lot to reflect on afterwards.</p></div></article></body></html>
